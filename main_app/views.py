@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Player
 
 # Create your views here.
 def home(request):
@@ -9,8 +10,14 @@ def about(request):
     return render(request, 'about.html')
 
 def players_index(request):
-    # We pass data to a template the same way we did in Express
+    players = Player.objects.all()
     return render(request, 'players/index.html', {
         'players': players
+    })
+
+def players_detail(request, player_id):
+    player = Player.objects.get(id = player_id)
+    return render(request, 'players/detail.html', {
+        'player': player 
     })
 

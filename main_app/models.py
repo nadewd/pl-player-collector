@@ -10,5 +10,5 @@ class Player(models.Model):
 # Changing this instance method
 # does not impact the database, therefore
 # no makemigrations is necessary
-def __str__self(self):
-    return f'{self.name} ({self.id})'
+    def __str__(self):
+        return f'{self.name} ({self.id})'
