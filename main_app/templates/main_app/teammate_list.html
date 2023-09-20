@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Teammate List</h1>
+
+{% for teammate in teammate_list %}
+  <a href="{% url 'teammates_detail' teammate.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ teammate.name }}</span>
+            <p>Team: {{ teammate.team }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}
